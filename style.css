@@ -1,0 +1,61 @@
+/* CSS is how you can add style to your website, such as colors, fonts, and positioning of your
+   HTML content. To learn how to do something, just try searching Google for questions like
+   "how to change link color." */
+
+body {
+  background-color: white;
+  color: black;
+  font-family: Verdana;
+}
+}
+.guiltytext {
+  color: black;
+  text-align: center;
+  font-family: papyrus;
+  font-weight: bold;
+  -webkit-text-stroke: 1px red;
+  font-size: 35px;
+}
+.guiltytext2 {
+  color: black;
+  text-align: center;
+  font-family: papyrus;
+  font-weight: bold;
+  -webkit-text-stroke: 1px red;
+  font-size: 20px;
+}
+p.epic {
+    color: red;
+  font-family: verdana;
+  font-size: 20px;
+  text-align: center;
+}
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+.left {
+  margin-left: 80px;
+  margin-right: 90px;
+}
+.ad {
+  position: fixed;
+}
+div.fixed {
+  position: fixed;
+  bottom: 0;
+  right: 40px;
+  border: 3px solid #73AD21;
+}
+div.static {
+  position: static;
+}
+.divider {
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+}
+/* Thick red border */
+hr.new4 {
+  border: 1px solid red;
+}
