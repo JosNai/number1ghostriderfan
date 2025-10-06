@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    /* ------------------------------------------------ */
+    /* BASIC ELEMENT STYLES */
+    /* ------------------------------------------------ */
+    img {
+      display: block;
+      margin: 1px auto;
+    }
+    iframe {
+            width: 960px;
+            height: 720px;
+            border: none;
+            box-shadow: 0 0 0 5px white; /* Creates a white outline around the iframe */
+            display: block;
+            margin: 20px auto; /* Centers the iframe and adds some space above and below */
+        }
+
+    /* ------------------------------------------------ */
+    /* CUSTOM FONT DEFINITION */
+    /* ------------------------------------------------ */
+    @font-face {
+      font-family: 'DoubleHomicide'; /* Give your font a recognizable name */
+      src: url('DoubleHomicide.ttf') format('truetype'); /* Specify the file path and format */
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    .vignette-overlay {
+  /* Fixes the image relative to the viewport (the browser window) */
+  position: fixed; 
+  
+  /* Ensures it covers the entire screen */
+  top: 0;
+  left: 0;
+  
+  /* Makes the image stretch to fill the screen size */
+  width: 100vw;   /* 100% of the viewport width */
+  height: 100vh;  /* 100% of the viewport height */
+  
+  /* Ensures the vignette is always on top of all other content */
+  z-index: 9999; 
+  
+  /* Makes the overlay non-clickable so users can interact with elements underneath */
+  pointer-events: none; 
+    image-rendering: pixelated; /* Standard and widely supported value */
+  image-rendering: crisp-edges; /* Alternative value for certain browsers (like Firefox) */
+}
+
+    /* ------------------------------------------------ */
+    /* NEW STYLES FOR GIF POSITIONING */
+    /* ------------------------------------------------ */
+    .logo-section {
+      position: relative; /* CRUCIAL: Makes this the positioning context for its children */
+      display: flex; 
+      flex-direction: column;
+      align-items: center; /* Center children horizontally */
+      justify-content: center;
+      /* Add padding to ensure GIFs that spill over are contained */
+      padding-top: 50px; 
+      padding-bottom: 50px; 
+      margin-left: auto; /* Center the section itself (though the body margins do most of the work) */
+      margin-right: auto;
+    }
+
+    /* Styles for the logo image */
+    .logo-section .center {
+        position: relative; /* Needed to ensure z-index works */
+        z-index: 10; /* Make sure the logo is above the GIFs */
+    }
+
+    /* Styles for the background GIFs */
+    .background-gif {
+      position: absolute; /* Take out of normal flow */
+      width: 150px; /* Adjust GIF size as needed */
+      height: auto;
+      z-index: 5; /* Place behind the logo (z-index: 10) */
+      pointer-events: none; /* Allows clicks to pass through */
+    }
+    
+    /* Specific positioning for each GIF (UPDATED FOR RANDOMNESS/ALIGNMENT) */
+    .gif-top-left {
+      top: 50px;   /* Closer to the top */
+      left: 100px; /* Closer to the left */
+    }
+    .gif-bottom-right {
+      /* Adjusted 'bottom' value to pull it up closer to the main content block */
+      bottom: 550px; 
+      right: 50px; 
+    }
+    .gif-middle-left {
+      top: 40%; /* Slightly above center */
+      left: -20px; /* Slightly outside boundary */
+      transform: translateY(-50%); 
+    }
+    .gif-middle-right {
+      top: 32%; /* Slightly below center */
+      right: -20px; /* Slightly outside boundary */
+      transform: translateY(-50%);
+      transform: scaleX(-1); /* This will flip the GIF horizontally */
+    }
+
+    /* ------------------------------------------------ */
+    /* YOUR EXISTING AND MODIFIED STYLES */
+    /* ------------------------------------------------ */
+    body {
+      background-color: #1c1618;
+      /* Enforce 15% margin on sides for content stop */
+      margin-left: 15%; 
+      margin-right: 15%;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    .guiltytext {
+      color: #d88038;
+      text-align: center;
+      font-family: 'DoubleHomicide', Arial, sans-serif; /* Fallback added */
+      font-size: 35px;
+    }
+    .guiltytext2 {
+      color: black;
+      text-align: center;
+      font-family: papyrus;
+      font-weight: bold;
+      -webkit-text-stroke: 1px red;
+      font-size: 20px;
+    }
+    p.epic {
+        color: red;
+      font-family: verdana;
+      font-size: 20px;
+      text-align: center;
+    }
+    .center {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .left {
+      margin-left: 80px;
+      margin-right: 90px;
+    }
+    .ad {
+      position: fixed;
+    }
+    div.fixed {
+      position: fixed;
+      bottom: 0;
+      right: 40px;
+      border: 3px solid #73AD21;
+    }
+    div.static {
+      position: static;
+    }
+    .divider {
+      font-size: 30px;
+      display: flex;
+      align-items: center;
+    }
+    /* Thick red border */
+    hr.big {
+      border: 5px solid red;
+    }
+      
+    </style>
+    <title>COOTS :D</title>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+  </head>
+  <body>
+
+    <img src="steamdeck/images/overlay.png" alt="Vignette Overlay" class="vignette-overlay">
+
+  <div class="logo-section">
+      <img src="steamdeck/images/danceskeleton.gif" alt="Animated GIF 1" class="background-gif gif-top-left">
+      <img src="steamdeck/images/skeletonaxe.gif" alt="Animated GIF 2" class="background-gif gif-bottom-right">
+      <img src="steamdeck/images/skullpoint.gif" alt="Animated GIF 3" class="background-gif gif-middle-left">
+      <img src="steamdeck/images/skullpoint.gif" alt="Animated GIF 4" class="background-gif gif-middle-right">
+
+      <img src="steamdeck/images/logo.png" alt="Welcome!!!!1!!11!!" class="center">
+      <p class="guiltytext"> Have you ever been like omg i love my steam deck but the sounds... the sounds... theyre not gloopy enough!!11!! Well I have the solution! Download my free GLOOPY UI sounds! That's right! Now your steam deck will sound nice when you move around in the menus!!! WOAH!</p>
+      <br>
+      <p class="guiltytext"> Just download it for FREE here!!!</p>
+  </div>
+  <a href="steamdeck/dl/Gloopy_UI_V1-1.zip" download>
+    <img 
+        src="steamdeck/images/downloadbutton.gif" 
+        alt="Download Now" 
+        style="
+            width: 330px; 
+            height: 105px; 
+            display: block; 
+            margin-left: auto; 
+            margin-right: auto;
+        "
+    >
+</a>
+
+  <div class="logo-section">
+
+      <p class="guiltytext"> Once you're done downloading all you need is to unzip it and drag it into...</p>
+          <code style="  font-family: monospace; background-color: #282c34; color: #abb2bf; padding: 20px;"> 
+              /home/deck/homebrew/sounds
+          </code>
+    <p class="guiltytext"> And you will be done!</p>
+
+  </div>
+
+    </body>
+<div style="width: 800px; height: 400px; display: inline-block;"></div>
+    <a href="index.html"> <img src="buttongraphics/takemeback.png" alt="BACK BUTTON" class="center"> </a>
+</html>

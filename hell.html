@@ -43,6 +43,26 @@
   font-weight: bold;
   font-family: papyrus;
 }
+    .vignette-overlay {
+  /* Fixes the image relative to the viewport (the browser window) */
+  position: fixed; 
+  
+  /* Ensures it covers the entire screen */
+  top: 0;
+  left: 0;
+  
+  /* Makes the image stretch to fill the screen size */
+  width: 100vw;   /* 100% of the viewport width */
+  height: 100vh;  /* 100% of the viewport height */
+  
+  /* Ensures the vignette is always on top of all other content */
+  z-index: 9999; 
+  
+  /* Makes the overlay non-clickable so users can interact with elements underneath */
+  pointer-events: none; 
+    image-rendering: pixelated; /* Standard and widely supported value */
+  image-rendering: crisp-edges; /* Alternative value for certain browsers (like Firefox) */
+}
 .divWrapper {
     width: 70%;
     overflow: hidden;
@@ -59,6 +79,7 @@ body {
   </head>
   <body>
   
+        <img src="steamdeck/images/fireoverlay.gif" alt="Vignette Overlay" class="vignette-overlay">
   
     <table style="margin: 0 auto;">
   <tbody><tr>
